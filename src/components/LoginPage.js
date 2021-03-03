@@ -27,19 +27,19 @@ export default class LoginPage extends Component {
 
     render() {
         return (
-            <div>
+            <div className="login">
                 <h3>Log In</h3>
                 <form onSubmit={this.handleSubmit}>
                     <label >
-                        email
+                        Email:
                         <input value={this.state.email} onChange={this.handleEmailChange} />
                     </label>
                     
                     <label >
-                        password
+                        Password:
                         <input value={this.state.password} onChange={this.handlePasswordChange} />
                     </label>
-                    <button>Submit</button>
+                    <button>Log In!</button>
                 </form>                
 
             </div>

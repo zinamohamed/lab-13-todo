@@ -40,15 +40,15 @@ export default class TodosListPage extends Component {
 
     render() {        
         return (
-            <div>
-                <h3>Your ToDos!</h3>
+            <div className="list">
+                <h3><img src="https://media4.giphy.com/media/cPllju7ZjKHSYaNCQg/giphy.gif" alt="list"/></h3>
                 <form onSubmit={this.handleSubmit}>
                     <input value={this.state.todo} onChange={this.handleTodoChange} />
                     <button>Add todo</button>
                 </form>
                 {!this.state.todos.length && <p>Treat Yo Self, You're all caught up!</p>}
                 {this.state.todos.map(todo => 
-                    <li
+                    <p
                         key={`${todo.todo}-${todo.id}`} 
                         onClick={() => this.handleComplete(todo.id, todo.todo)}
                         className={`
@@ -57,7 +57,7 @@ export default class TodosListPage extends Component {
                                 : ''}`
                             }>    
                         {todo.todo}
-                    </li>)}
+                    </p>)}
             </div>
         )
     }

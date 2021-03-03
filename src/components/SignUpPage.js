@@ -23,8 +23,8 @@ export default class SignUpPage extends Component {
 
     render() {
         return (
-            <div>
-                <h3>Signup</h3>
+            <div className="login">
+                <h3>Sign Up</h3>
                 <form onSubmit={this.handleSubmitButton}>
                     <label >
                         Email:
@@ -35,7 +35,7 @@ export default class SignUpPage extends Component {
                         Password:
                         <input value={this.state.password} onChange={this.handlePasswordChange} />
                     </label>
-                    <button>Submit!</button>
+                    <button>Sign Up!</button>
                 </form>                
 
             </div>

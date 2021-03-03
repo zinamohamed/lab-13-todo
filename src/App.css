@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-logo {
@@ -39,4 +43,66 @@
 
 .completed {
   text-decoration: line-through;
+  color:grey;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+.nav{
+  padding: 10px;
+  text-decoration: none;
+  color:orange;
+  font-size:16px;
+}
+
+.nav:hover{
+  color: pink;
+}
+
+.home-wrapper {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  color: pink;
+}
+
+.login {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: orange;
+  font-size: 18px;
+}
+
+form {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+label {
+  padding: 10px;
+  margin: 10px;
+}
+
+.list{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 10px;
+  color: orange;
+}
+
+button {
+  margin: 10px;
 }

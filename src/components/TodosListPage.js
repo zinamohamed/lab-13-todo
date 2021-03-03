@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { getTodos, addTodo, completeTodo } from '../Utils/api-utils.js';
+import '../App.css';
 export default class TodosListPage extends Component {
     state = {
         todos: [],
@@ -31,8 +32,8 @@ export default class TodosListPage extends Component {
         this.setState({ todo: e.target.value })
     }
 
-    handleComplete = async(todoId) => {
-        await completeTodo(todoId, this.props.user.token);
+    handleComplete = async(todoId, todo) => {
+        await completeTodo(todoId, this.props.user.token, todo);
 
         this.fetchTodos();
     }
@@ -45,18 +46,18 @@ export default class TodosListPage extends Component {
                     <input value={this.state.todo} onChange={this.handleTodoChange} />
                     <button>Add todo</button>
                 </form>
-                {!this.state.todos.length && <p>You're all caught up!</p>}
+                {!this.state.todos.length && <p>Treat Yo Self, You're all caught up!</p>}
                 {this.state.todos.map(todo => 
-                    <p 
+                    <li
                         key={`${todo.todo}-${todo.id}`} 
-                        onClick={() => this.handleComplete(todo.id)}
+                        onClick={() => this.handleComplete(todo.id, todo.todo)}
                         className={`
                             todo ${todo.completed 
                                 ? 'completed' 
                                 : ''}`
                             }>    
                         {todo.todo}
-                    </p>)}
+                    </li>)}
             </div>
         )
     }

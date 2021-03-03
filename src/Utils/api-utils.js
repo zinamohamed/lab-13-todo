@@ -31,16 +31,21 @@ export async function addTodo(todo, token) {
     const response = await request
         .post(`${URL}/api/todos`)
         .set('Authorization', token)
-        .send({todo})
+        .send({todo: todo,
+            completed:false})
 
     return response.body;
 }
 
 
-export async function completeTodo(id, token) {
+export async function completeTodo(todoId, token, todo) {
     const response = await request
-        .put(`${URL}/api/todos/${id}`)
+        .put(`${URL}/api/todos/${todoId}`)
         .set('Authorization', token)
+        .send({
+            todo: todo,
+            completed: true
+        })
 
     return response.body;
 }
